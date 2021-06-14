@@ -1,0 +1,160 @@
+//================ header部分 ================
+.header{
+    @include mobile{
+        // margin-bottom: 40px;
+        .container{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.nav-bar{
+    position: relative;
+    height: $nav-height;
+    @include mobile{
+        padding-left: 20px;
+        padding-right: 0;
+    }
+    .logo{
+        float: left;
+        height: $nav-height;
+        img{
+            margin-top: 9px;
+            margin-bottom: 9px;
+        }
+    }
+    .menu{
+        float: right;
+        display: flex;
+        li{
+            // margin-left: 32px;
+            a{
+                @include fontType(20px,$nav-height);
+                color: $nav-font-color;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            &:hover{
+                background-color: #8D8D8D;
+                a{
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        // 在手機尺寸中執行以下內容
+        @include mobile{
+            // 隱藏選單高度    
+            max-height: 0px;
+            // 在手機上隱藏選單
+            overflow: hidden;
+            transition: max-height 1.5s;
+            z-index: 100;
+            // 因為nav-bar的高度為56px，所以要超過56px
+            // 左右推開變成滿版
+            position: absolute;
+            top: $nav-height+1px;
+            left: 0px;
+            right: 0px;
+            // 將menu選單上次增加視覺識別
+            background-color: #707070;
+            flex-direction: column;
+
+            li{
+                float: none;
+                border-top: 1px solid #FFFFFF;
+                margin-left: 0;
+                a{
+                    // 在載具中佔滿畫面
+                    display: block;
+                    transition: all 0.3s;
+                    text-align: center;
+                    color: #FFFFFF;
+                    
+                    &:hover{
+                        background-color: #8D8D8D;
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+
+    .cart_btn{
+        float: right;
+        @include fontType(20px,$nav-height);
+        text-align: center;
+        padding-right: 16px;
+        padding-left: 16px;
+        &:hover{
+            background-color: #8D8D8D;
+            color: #FFFFFF;
+        }
+
+        color: $nav-font-color;
+        @include mobile{
+            padding-right: 0;
+            padding-left: 0;
+            .cartRemove{
+                display: none;
+            }
+        }
+    }
+}
+
+
+// 漢堡選單鈕的製作
+.menu.burgar_btn li{
+    display: none;
+}
+
+
+.burgar_btn-show .burgar_btn{
+    max-height: 300px;
+    li{
+        display: block;
+    }
+}
+
+
+.burgar_btn{
+    float: right;
+    color: $nav-font-color;
+
+    .fa-bars{
+        font-size: 32px;
+        display: none;   
+    }
+
+    @include mobile{
+        display: block;
+        float: right;
+        line-height: $nav-height;
+
+        .fas{
+            display: block;
+            line-height: $nav-height;
+            margin-left: 12px;
+            padding-left: 22px;
+            padding-right: 22px;
+        }
+    }
+}
+
+
+// 手機板所要顯示的購物車數量樣式
+.qtyInCart{
+    display: none;
+
+    @include mobile{
+        display: inline-block;
+        @include size(16px,13px);
+        @include fontType(12px,13px);
+        text-align: center;
+        background-color: #916000;
+        border-radius: 7px;
+        color: #FFFFFF;
+        transform: translate(-5px,-12px);
+    }
+}

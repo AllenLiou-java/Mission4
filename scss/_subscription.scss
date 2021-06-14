@@ -1,0 +1,57 @@
+//================ 訂閱內容 ================
+.subscription{
+    height: 600px;
+    background-image: url(../img/index10.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    .container{
+        padding-top: 312px;
+        h2{
+            @include fontType(32px,48px);
+            font-weight: bolder;
+            color: #8D8D8D;
+            margin-bottom: 20px;
+        }
+        .fillEmail{
+            @include size(350px,60px);
+            background-color: #916000;
+            overflow: hidden;
+            &:hover{
+                background-color: #6C4700;
+                transition: 0.3s;
+            }
+
+            input{
+                @include size(219px,60px);
+                @include fontType(15px,30px);
+                padding: 15px;
+                border: 2px solid #916000;
+                outline: none;
+            }
+            .btn-sendMail{
+                @include size(131px,60px);
+                @include fontType(16px,24px);
+                padding: 21px 26px 20px 27px;
+                
+                color: #FFFFFF;
+                background-color: #916000;
+
+                &:hover{
+                    background-color: #6C4700;
+                    border-color: #6C4700;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+    @include mobile{
+        width: 375px;
+        height: 600px;
+        background-size: 160%; 
+        background-position: left;
+        .fillEmail{
+            @include size(345px,60px);
+        }
+    }
+}

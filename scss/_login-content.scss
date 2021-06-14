@@ -1,0 +1,127 @@
+html, body{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+body{
+    font-family: 'Roboto', 'SF Pro Text', 'Noto Sans TC';
+}
+
+.block{
+    display: block;
+}
+
+.container{
+    // 要設定為 max-width 才能做響應式
+    max-width: 1110px;
+    height: auto;
+    margin: 0 auto;
+    
+
+    @include mobile{
+        max-width: 376px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.content{
+    padding-top: 80px;
+    padding-bottom: 82px;
+
+    @include mobile{
+        padding-top: 40px;
+        padding-bottom: 106px;
+    }
+
+    .userinfo{
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile{
+            flex-direction: column;
+        }
+
+        .loginPhoto{
+            @include size(730px);
+            background-image: url(../img/login1.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+            @include mobile{
+                @include size(345px,220px);
+                margin-bottom: 28px;
+            }
+            
+        }
+        .info{
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2{
+                @include fontType(32px,48px);
+                font-weight: bolder;
+                margin-bottom: 12px;
+            }
+            label{
+                @include fontType(16px,22px);
+                input{
+                    @include size(350px,38px);
+                    margin-top: 4px;
+                    margin-bottom: 20px;
+                    padding-top: 9px;
+                    padding-bottom: 10px;
+                    padding-left: 12px;
+                    border-radius: 4px;
+                    border: 1px solid #CED4DA;
+                }
+            }
+            .button-list{
+                margin-top: 16px;
+                display: flex;
+                justify-content: space-between;
+                .btn-left{
+                    @include fontType(16px,24px);
+                    color: #916000;
+                    font-weight: bolder;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                }
+                .btn-right{
+                    display: flex;
+                    a{
+                        @include fontType(16px,22px);
+                        padding: 8px 16px;
+                        border: 1px solid #916000;
+                        border-radius: 4px;
+                    }
+                    a:first-child{
+                        margin-right: 8px;
+                        color: #916000;
+                        background-color: #FFFFFF;
+                        &:hover{
+                            color: #FFFFFF;
+                            background-color: #916000;
+                            transition: 0.3s;
+                        }
+                    }
+                    a:nth-child(2){
+                        color: #FFFFFF;
+                        background-color: #916000;
+                        &:hover{
+                            background-color: #6C4700;
+                            border-color: #6C4700;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.block{
+    display: block;
+}

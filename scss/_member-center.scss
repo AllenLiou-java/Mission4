@@ -1,0 +1,235 @@
+html, body{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+body{
+    font-family: 'Roboto', 'SF Pro Text', 'Noto Sans TC';
+}
+
+.container{
+    // 要設定為 max-width 才能做響應式
+    max-width: 1110px;
+    height: auto;
+    margin: 0 auto;
+
+    @include mobile{
+        max-width: 376px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.block{
+    display: block;
+}
+
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    @include mobile{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        flex-direction: column;
+    }
+
+    .left-side{
+        width: 97px;
+        
+        @include mobile{
+            width: 345px;
+            order: 1;
+        }
+        
+        h2{
+            @include fontType(20px,30px);
+            color: #848484;
+            margin-bottom: 28px;
+
+            @include mobile{
+                display: none;
+            }
+        }
+
+        .itemList{
+            li{
+                margin-bottom: 24px;
+
+                a{
+                    @include fontType(16px,24px);
+                    color: #848484;
+                }
+                &:hover{
+                    border-bottom: 2px solid #916000;
+                }
+            }
+
+            @include mobile{
+                display: flex;
+                justify-content: space-between;
+            }
+
+            // 若選單被選取，則標上底線
+            .activated{
+                a{
+                    color: #916000;  
+                    font-weight: bold;
+                    border-bottom: 2px solid #916000;
+                }
+            }
+        }
+    }
+
+    .right-side{
+        width: 260px;
+
+        @include mobile{
+            order: 2;
+            padding-bottom: 40px;
+        }
+
+        h2{
+            padding-bottom: 12px;
+            @include mobile{
+                margin-top: 16px;
+                padding-bottom: 8px;
+            }
+
+            .title{
+                @include fontType(16px,22px);
+                color: #818A91;
+            }
+            span{
+                @include fontType(20px,30px);
+                color: #818A91;
+            }
+        }
+
+        td{
+            @include fontType(16px,24px);
+            width: 80px;
+            height: 16px;
+            padding-top: 16px;
+            color: #818A91;
+        }
+
+        p{
+            @include fontType(14px,21px);
+            color: #A5A5A5;
+        }
+    }
+
+    .personal-info{
+        width: 635px;
+        @include mobile{
+            width: 350px;
+            order: 3;
+        }
+    
+        h2{
+            border-bottom: 1px solid #818A91;
+            padding-bottom: 8px;
+            @include fontType(16px,22px);
+            font-weight: bolder;
+        }
+    
+        table{
+            margin-top: 8px;
+            border-spacing: 8px;
+            width: 445px;
+            @include mobile{
+                width: 345px;
+            }
+    
+            th, td{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                text-align: left;
+                color: #818A91;
+            }
+    
+            th{
+                width: 95px;
+                @include mobile{
+                    width: 90px;
+                }
+            }
+    
+            td{
+                @include size(154px,19px);
+                input[type="text"]{
+                    @include size(350px,38px);
+                    @include fontType(16px,22px);
+                    padding-top: 9px;
+                    padding-bottom: 9px;
+                    padding-left: 10px;
+                    color: #818A91;
+                    border: 1px solid #818A91;
+                    border-radius: 4px;
+    
+                    @include mobile{
+                        @include size(255px,38px);
+                    }
+                }
+                select{
+                    @include size(160px,38px);
+                    @include fontType(16px,22px);
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                    padding-left: 8px;
+                    color: #818A91;
+                    border-radius: 4px;
+    
+                    @include mobile{
+                        @include size(170px,38px);
+                    }
+                }
+
+                .contry, .section{
+                    @include mobile{
+                        @include size(80px,38px);
+                    }
+                }
+
+                .sex{
+                    @include size(59px,38px);                
+                }
+    
+                .getInfo{
+                    @include fontType(16px,24px);
+                    color: #818A91;
+                }
+            }
+    
+            .btn{
+                @include size(162px,38px);
+                @include fontType(16px,22px);
+                padding: 8px 48px;
+                background-color: #916000;
+                border: 1px solid #916000;
+                border-radius: 4px;
+                color: #FFFFFF;
+    
+                &:hover{
+                    background-color: #6C4700;
+                    border: 1px solid #6C4700;
+                    transition: 0.3s;
+                }
+    
+            }
+
+            .mb-6{
+                margin-bottom: 48px;
+            }
+        }
+        
+    }
+}
+
+
+
+

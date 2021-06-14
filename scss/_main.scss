@@ -1,0 +1,427 @@
+.mt-1{
+    margin-top: 8px;
+}
+
+.mb-2{
+    margin-bottom: 16px;
+}
+
+html, body{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+body{
+    font-family: 'Roboto', 'SF Pro Text', 'Noto Sans TC';
+}
+
+.container{
+    // 要設定為 max-width 才能做響應式
+    max-width: 1110px;
+    height: auto;
+    margin: 0 auto;
+
+    @include mobile{
+        max-width: 376px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.block{
+    display: block;
+}
+
+.banner{
+    height: 870px;
+    position: relative;
+    margin-bottom: 60px;
+
+    @include mobile{
+        margin-bottom: 40px;
+        height: 480px;
+    }
+
+    .bannerImg{
+        position: relative;
+        height: 100%;
+        background-image: url(../img/index1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .container{
+        position: relative;
+        height: 870px;
+        @include mobile{
+            height: 480px;
+        }
+
+        .banner-text{
+            width: 445px;
+            position: absolute;
+            right: 0px;
+            top: 295px;
+            color: #FFFFFF;
+            padding: 15px;
+            h2 {
+                @include fontType(40px,60px);
+            }
+            p {
+                @include fontType(24px,36px);
+            }
+            .btn {
+                @include size(350px,60px);
+                @include btnType(30px, 2px, white);
+                @include fontType(30px,60px);
+                color: #FFFFFF;
+                &:hover{
+                    background-color: #f0f0f0;
+                    transition: 0.3s;
+                }
+            }
+            // 在手機尺寸中執行以下內容
+            @include mobile{
+                width: 345px;
+                position: relative;
+                top: 101px;
+                padding-left: 15px;
+                padding-right: 15px;
+                h2 {
+                    width: 345px;
+                    @include fontType(32px,48px);
+                }
+                p {
+                    width: 345px;
+                    @include fontType(20px,30px);
+                }
+                .btn {
+                    width: 345px;
+                    @include size(345px,60px);
+                    @include fontType(28px,42px);
+                }
+            }
+        }
+    }
+}
+
+//================ content部分 ================
+
+.content{
+    margin-bottom: 60px;
+    @include mobile{
+        margin-bottom: 0px;
+    }
+}
+
+.content-list{
+    max-width: 1110px;
+    .item{
+        display: flex;
+        .intro{
+            @include size(555px);
+            h2{
+                @include fontType(32px,48px);
+                font-weight: bolder;
+            }
+            p{
+                @include fontType(20px,30px);
+                margin-bottom: 16px;
+            }
+        }
+        .intro-l {
+            @include size(555px,1080px);
+            background-color: #fff;
+            ul{
+                @include size(345px,auto);
+                li{
+                    margin-bottom: 52px;
+                    h2{
+                        @include fontType(24px,36px);
+                        font-weight: bolder;
+                        margin-bottom: 4px;
+                    }
+                    p{
+                        @include fontType(16px,24px);
+                    }
+                    .btn {
+                        margin-top: 60px;
+                        @include size(350px,60px);
+                        @include btnType(30px, 2px, #000000);
+                        @include fontType(20px,60px);
+                        color: #000000;
+
+                        &:hover{
+                            background-color: #E0E0E0;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+        .leftSectionMoveRight{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding-right: 110px;
+        }
+        .rightSectionMoveLeft{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 110px;
+        }
+        .prodImg{
+            @include size(555px);
+        }
+        .img1{
+            background-image: url(../img/index2.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .img2{
+            background-image: url(../img/index3.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .img3{
+            background-image: url(../img/index4.jpg);
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: cover; 
+        }
+        .prodImg-l{
+            @include size(555px,1080px);
+        }
+        .img4{
+            background-image: url(../img/index5.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover; 
+        }
+    }
+
+    
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+        .item{
+            flex-direction: column;
+            margin-bottom: 32px;
+            .intro{
+                @include size(345px,230px);
+                p{
+                    margin-bottom: 8px;
+                }
+            }
+            .intro-l {
+                @include size(345px,800px);
+                background-color: #fff;
+                margin-bottom: 0;
+                ul{
+                    width: 345px;
+                    li{
+                        margin-bottom: 20px;
+                        .btn {
+                            margin-top: 0;
+                            @include size(345px,60px);
+                        }
+                    }
+                }
+            }
+            .leftSectionMoveRight{
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                padding: 0px;
+            } 
+            .rightSectionMoveLeft{
+                height: auto;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+            }
+            .prodImg{
+                @include size(345px,350px);
+                overflow: hidden;
+                margin-bottom: 8px;
+                img{
+                    width: 345px;
+                }
+            }
+            .prodImg-l{
+                @include size(345px,680px);
+                overflow: hidden;
+                margin-bottom: 8px;
+            }
+        }
+        .reverse{
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+.intro *, .intro-l *{
+    width: 350px;
+}
+
+.check-more-link{
+    font-size: 16px;
+    line-height: 24px;
+    color: #AC8A46;
+}
+
+
+//================ promotion內容 ================
+
+.promotion{
+    background-color: #E0E0E0;
+    margin-bottom: 60px;
+    .promoList{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        li{
+            img{
+                @include size(350px,540px);
+            }
+            h2{
+                @include fontType(24px,36px);
+                font-weight: bolder;
+            }
+            p{
+                @include fontType(16px,24px);
+                span{
+                    color: #8D8D8D;
+                    margin-left: 8px;
+                    text-decoration: line-through;
+                }
+            }
+            .soldOut{
+                position: relative;
+            }
+            
+            // Sold out文字
+            .soldOut::before{
+                position: absolute;
+                text-align: center;
+                @include size(100%,100%);
+                @include fontType(24px,540px);
+                color: #FFFFFF;
+                content: "Sold out";
+                z-index: 5;
+            }
+            
+            // Sold out背景色
+            .soldOut::after{
+                position: absolute;
+                left: 0;
+                content: "";
+                @include size(100%,100%);
+                background-color: #000000;
+                opacity: 0.3;
+                z-index: 3;
+            }
+        }
+    }
+
+    @include mobile{
+        .promoList{
+            flex-direction: column;
+            padding-top: 32px;
+            padding-bottom: 36px;
+            li{
+                margin: 0;
+                img{
+                    @include size(345px,350px);
+                }
+                .mb-16{
+                    margin-bottom: 4px;
+                }
+            }
+            li:nth-child(1){
+                margin-bottom: 32px;
+            }
+            li:nth-child(2){
+                margin-bottom: 24px;
+            }
+
+            .soldOut{
+                position: relative;
+            }
+            // Sold out文字
+            .soldOut::before{
+                @include size(345px,100%);
+                @include fontType(24px,100%);
+            }
+            
+            // Sold out背景色
+            .soldOut::after{
+                @include size(345px,100%);
+            }
+        }
+    }
+}
+
+//================ idea理念內容 ================
+.idea.mb-60{
+    @include mobile{
+        margin-bottom: 40px;
+    }
+}
+
+.idea{
+    margin-bottom: 60px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        .prodImg{
+            @include size(730px,520px);
+            background-image: url(../img/index9.jpg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover; 
+        }
+        .description{
+            width: 350px;
+            h2{
+                @include fontType(32px,48px);
+                font-weight: bolder;
+            }
+            h3{
+                @include fontType(20px,30px);
+            }
+            p{
+                @include fontType(16px,24px);
+            }
+        }
+    
+        @include mobile{
+            flex-direction: column;
+            .prodImg{
+                @include size(345px,520px);
+            }
+            .description{
+                width: 345px;
+                h2{
+                    margin-top: 8px;
+                }
+                p{
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+                }
+            }
+            
+        }
+    }
+}
+
+
+
+

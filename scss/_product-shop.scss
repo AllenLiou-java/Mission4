@@ -1,0 +1,160 @@
+html, body{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+body{
+    font-family: 'Roboto', 'SF Pro Text', 'Noto Sans TC';
+}
+
+.container{
+    // 要設定為 max-width 才能做響應式
+    max-width: 1110px;
+    height: auto;
+    margin: 0 auto;
+
+    @include mobile{
+        max-width: 376px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.block{
+    display: block;
+}
+
+
+
+.content{
+    padding-top: 80px;
+    padding-bottom: 60px;
+
+    // 在手機尺寸中執行以下內容
+    @include mobile{
+        padding-top: 42px;
+        padding-bottom: 40px;
+    }
+
+    .product-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .product-card{
+            margin-bottom: 58px;
+            .prodImg{
+                @include size(255px);
+                background-position: center;
+                background-size: cover;
+            }
+
+            // 在手機尺寸中執行以下內容
+            @include mobile{
+                margin-bottom: 30px;
+                .prodImg{
+                    @include size(165px);
+                }
+            }
+    
+            .img1{
+                background-image: url(../img/products1.jpg);
+            }
+            .img2{
+                background-image: url(../img/index6.jpg);
+                background-position: bottom;
+            }
+            .img3{
+                background-image: url(../img/products3.jpg);
+                background-position: 0 25%;
+            }
+            .img4{
+                background-image: url(../img/products4.jpg);
+                background-position: 0 25%;
+            }
+            .img5{
+                background-image: url(../img/products5.jpg);
+                background-position: 0 25%;
+            }
+            .img6{
+                background-image: url(../img/index4.jpg);
+                background-position: left;
+            }
+            .img7{
+                background-image: url(../img/products7.jpg);
+            }
+            .img8{
+                background-image: url(../img/products8.jpg);
+            }
+            .img9{
+                background-image: url(../img/index3.png);
+            }
+            .img10{
+                background-image: url(../img/products10.jpg);
+            }
+            .img11{
+                background-image: url(../img/products11.jpg);
+            }
+            .img12{
+                background-image: url(../img/products12.jpg);
+            }
+
+            // product-card文字內容設定
+            h2{
+                @include fontType(24px,36px);
+                font-weight: bolder;
+                margin-top: 2px;
+            }
+            p{
+                @include fontType(16px,24px);
+                span{
+                    text-decoration: line-through;
+                    padding-left: 8px;
+                    color: #8D8D8D;
+                }
+            }
+            .mark{
+                margin-top: 3px;
+                display: flex;
+                color: #916019;
+                .heart{
+                    margin-right: 10px;
+                }
+            }
+
+            // 在手機尺寸中執行以下內容
+            @include mobile{
+                h2{
+                    @include fontType(20px,30px);
+                }
+                p{
+                    margin-top: 2px;
+                }
+                .mark .heart{
+                    margin-right: 11px;
+                }
+            }
+
+        }
+    }
+    .pagination{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        li{
+            @include fontType(20px,30px);
+            padding-left: 10px;
+            padding-right: 10px;
+            a{
+                color: #000000;
+            }
+        }
+        li:first-child a{
+            color: #AC8A46;
+            text-decoration:underline;
+        }
+
+        @include mobile{
+            margin-top: 16px;
+        }
+    }
+}

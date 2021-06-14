@@ -1,0 +1,201 @@
+html, body{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+body{
+    font-family: 'Roboto', 'SF Pro Text', 'Noto Sans TC';
+}
+
+.container{
+    // 要設定為 max-width 才能做響應式
+    max-width: 1110px;
+    height: auto;
+    margin: 0 auto;
+
+    @include mobile{
+        max-width: 376px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.block{
+    display: block;
+}
+
+
+.content{
+    position: relative;
+    padding-top: 80px;
+    position: relative;
+
+    @include mobile{
+        padding-top: 40px;
+        flex-direction: column;
+    }
+
+    .product-img.top{
+        position: relative;
+        width: 730px;
+        margin-bottom: 30px;
+
+        @include mobile{
+            width: 345px;
+            position: static;
+            margin-bottom: 28px;
+        }
+    }
+
+    .product-img.bottom{
+        position: relative;
+        width: 730px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        img{
+            margin-bottom: 30px;
+        }
+
+        @include mobile{
+            position: static;
+            width: 345px;
+            margin-bottom: 24px;
+            img{
+                margin-bottom: 16px;
+            }
+        }
+    }
+    .product-info{
+        position: absolute;
+        right: 0;
+        top: 80px;
+        width: 350px;
+        
+
+        @include mobile{
+            width: 345px;
+            margin-bottom: 40px;
+            position: static;
+        }
+
+        .title{
+            @include fontType(32px,48px);
+            font-weight: bolder;
+        }
+        .intro{
+            @include fontType(20px,30px);
+            margin-bottom: 32px;
+        }
+        .price{
+            @include fontType(20px,30px);
+            margin-bottom: 12px;
+        }
+        .order{
+            display: flex;
+            margin-bottom: 8px;
+            input{
+                @include size(160px,50px);
+                @include fontType(16px,18px);
+                border: 1px solid #916000;
+                border-radius: 5px 0 0 5px;
+            }
+            a{
+                @include size(190px,50px);
+                @include fontType(16px,22px);
+                background-color: #916000;
+                color: #FFFFFF;
+                padding: 14px 55px;
+                border-radius: 0 5px 5px 0;
+
+                @include mobile{
+                    @include size(188px,50px);
+                    padding: 14px 52px;
+                }
+            }
+        }
+        .addCollect{
+            margin-bottom: 80px;
+            cursor: pointer;
+            .fa-heart{
+                color: #916019;
+            }
+            span{
+                padding-left: 2px;
+            }
+
+            @include mobile{
+                margin-bottom: 40px;
+            }
+        }
+        .buy_know{
+            margin-bottom: 20px;
+            .subtitle{
+                @include fontType(16px,24px);
+                font-weight: bolder;
+                margin-bottom: 8px;
+            }
+            p{
+                @include fontType(16px,24px);
+            }
+        }
+        .return_know{
+            .subtitle{
+                @include fontType(16px,24px);
+                font-weight: bolder;
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+
+
+
+.itemAdded, .collectAdded{
+    display: none;
+}
+
+.itemAdded.msgShow, .collectAdded.msgShow{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include size(100vw,100vh);
+    z-index: 10;
+    background-color: #00000080;
+    
+    p{
+        // 訊息框置中
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+
+        @include size(540px,62px);
+        @include fontType(20px,28px);
+        font-weight: bolder;
+        color: #916000; 
+        background-color: #fff;
+        border-radius: 4px;
+
+        @include mobile{
+            width: 165px;
+        }
+
+        // 訊息框中的文字置中
+        text-align: center;
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+    
+}
+
+.noscroll{ 
+    position: fixed; 
+    width: 100%;
+    overflow-y:scroll;
+}
+

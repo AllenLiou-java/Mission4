@@ -1,0 +1,39 @@
+// 設定寬高
+@mixin size($w,$h:$w){
+    width: $w;
+    height: $h;
+}
+
+// 設定文字大小及行高
+@mixin fontType($fz,$lh){
+    font-size: $fz;
+    line-height: $lh;
+}
+
+// 設定按鈕樣式：導角角度，邊框寬度，邊框顏色
+@mixin btnType($bdrs:0px,$bdw:0px,$bdc:#000000){
+    border-radius: $bdrs;
+    border: $bdw solid $bdc;
+    text-align: center;
+}
+
+// 內容 垂直/水平 置中
+@mixin contentCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// RWD - mobile
+@mixin mobile{
+    @media(max-width: 376px) {
+        @content;
+    }
+}
+
+@mixin pad{
+    @media(max-width: 768px) {
+        @content;
+    }
+}

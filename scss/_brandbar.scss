@@ -1,0 +1,20 @@
+.brand-bar{
+    background-color: #916000;
+    .brand-list{
+        display: flex;
+        li{
+            margin-right: 28px;
+            a{
+                display: block;
+                @include fontType(20px,30px);
+                color: #FFFFFF;
+                padding-top: 11px;
+                padding-bottom: 11px;
+            }
+        }
+    }
+
+    @include mobile{
+        display: none;
+    }
+}

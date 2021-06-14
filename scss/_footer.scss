@@ -1,0 +1,46 @@
+.footer{
+    background-color: #916000;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+            display: flex;
+            align-items: center;
+            img{
+                padding-top: 21px;
+                padding-bottom: 21px;
+            }
+            p{
+                @include fontType(14px,21px);
+                margin-left: 20px;
+                padding-top: 30px;
+                padding-bottom: 29px;
+                color: #FFFFFF;
+            }
+        }
+        .right ul{
+            display: flex;
+            li{
+                padding: 25px 18px;
+                a{
+                    @include fontType(20px,30px);
+                    color: #FFFFFF;
+                }
+                &:hover{
+                    background-color: #fff;
+                    a{
+                        color: #916000;
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    @include mobile{
+        .right{
+            display: none;
+        }
+    }
+}

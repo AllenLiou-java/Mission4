@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="./css/productDetail.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="nav-bar">
+                <h1 class="logo">
+                    <a href="./index.html"><img src="./img/d’Perfume.png" alt="Logo"></a>
+                </h1>
+                <a href="#" class="burgar_btn burgar_extend">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <a href="#" class="cart_btn">
+                    <i class="fas fa-shopping-cart"></i><span class="cartRemove">Cart(3)</span><span class="qtyInCart">3</span>
+                </a>
+                <ul class="menu">
+                    <li><a class="block" href="./product.html"><i class="fas fa-store-alt"></i>Product</a></li>
+                    <li><a class="block" href="./login.html"><i class="fas fa-user"></i>log in</a></li>
+                    <li><a class="block" href="#"><i class="fas fa-heart"></i>Wishlist</a></li>
+                </ul>
+                <ul class="menu burgar_btn">
+                    <li><a href="./product.html">Product</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="./login.html">log in</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="brand-bar">
+        <div class="container">
+            <ul class="brand-list">
+                <li><a href="#">CHANEL</a></li>
+                <li><a href="#">Jo Malone</a></li>
+                <li><a href="#">Curology</a></li>
+                <li><a href="#">Dior</a></li>
+                <li><a href="#">Chloe</a></li>
+                <li><a href="#">Chloe</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content container">
+        <div class="product-img top">
+            <img src="./img/product1.jpg" alt="product">
+        </div>
+        <div class="product-info">
+            <h2 class="title">CHANEL N°5</h2>
+            <p class="intro">N°5，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。</p>
+            <p class="price">NT$4,980</p>
+            <div class="order">
+                <input type="number" min="0">
+                <a class="block" id="add-to-cart" href="#">加入購物車</a>
+            </div>
+            <div class="addCollect" id="add-to-collect">
+                <i class="fas fa-heart"></i>
+                <span>加入我的收藏</span>
+            </div>
+            <div class="buy_know">
+                <p class="subtitle">商品購買須知</p>
+                <p>產品因拍攝關係顏色可能略有差異，實際以廠商出貨為主。<br>
+                    商品情境照為示意用，僅商品主體不包含其他配件，請以規格內容物為主。<br>
+                    D’Perfume 盡可能確保所列商品備貨充足，但偶爾仍會有產品售罄的情況。
+                    如您所訂購的商品庫存不足，我們將盡快以電子郵件通知您。
+                    任何訂單變動均會在訂單總額與出貨訊息內更新。
+                </p>
+            </div>
+            <div class="return_know">
+                <p class="subtitle">退換貨須知</p>
+                <p>依《消費者保護法》的規定，於全站購物皆享有商品到貨【七日猶豫期】（含例假日）之權益。
+                    若收到的商品有任何問題，可於猶豫期內申請退貨。
+                </p>
+            </div>
+        </div>
+        <div class="product-img bottom">
+            <img width="350px" src="./img/product2.jpg" alt="product">
+            <img width="350px" src="./img/product3.jpg" alt="product">
+            <img width="730px" src="./img/product1.jpg" alt="product">
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="left">
+                <img src="./img/d’Perfumewhite.png" alt="Logo" class="logo">
+                <p>© 2020. All Rights Reserved.</p>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="./product.html">Product</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="itemAdded">
+        <p>已加入購物車</p>
+    </div>
+    <div class="collectAdded">
+        <p>已加入我的收藏</p>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src="./all.js"></script>
+</body>
+</html>
